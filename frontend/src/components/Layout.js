@@ -38,7 +38,7 @@ export const Layout = props => {
 						<WhatshotRoundedIcon/>
 					</IconButton>
 					<Typography className={classes.title} variant="h6" noWrap>
-						No Fear
+						3п
 					</Typography>
 					<Route
 						path="/"
@@ -47,9 +47,11 @@ export const Layout = props => {
 								<Tabs value={value} onChange={handleChange}>
 									//TODO display label without CAPS
 									<Tab label="П. Личный Кабинет" component={Link} to="/" {...a11yProps(0)}/>
-									<Tab label="С. Личный кабинет" component={Link} to="/account" {...a11yProps(1)}/>
-									<Tab label="Форум" component={Link} to="/forum" {...a11yProps(1)}/>
-									<Tab label="Рейтинг" component={Link} to="/rating" {...a11yProps(1)}/>
+									<Tab label="С. Личный кабинет" component={Link} to="/Account" {...a11yProps(1)}/>
+									<Tab label="Рейтинг дисциплин" component={Link} to="/DisciplineRanking" {...a11yProps(2)}/>
+									<Tab label="Рейтинг учащихся" component={Link} to="/StudentRanking" {...a11yProps(3)}/>
+									<Tab label="Ближайшие мероприятия" component={Link} to="/ComingEvents" {...a11yProps(4)}/>
+
 								</Tabs>
 							</>
 						)}/>
@@ -79,8 +81,8 @@ export const Layout = props => {
 						open={open}
 						onClose={handleClose}
 					>
-						<MenuItem onClick={handleClose}>Profile</MenuItem>
-						<MenuItem onClick={handleClose}>My account</MenuItem>
+						<MenuItem onClick={handleClose}>Профиль</MenuItem>
+						<MenuItem onClick={handleClose}>Выход</MenuItem>
 					</Menu>
 				</Toolbar>
 			</AppBar>

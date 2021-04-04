@@ -2,9 +2,15 @@ import {Drawer, List, ListItem, ListItemIcon, ListItemText, Typography} from "@m
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import {useStyles} from "../../styles";
+import {useState} from "react";
 
-export const AllDiscipline = (props) => {
+export const Statistics = (props) => {
   const classes = useStyles();
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const handleListItemClick = (event, index) => {
+    setSelectedIndex(index);
+  };
   return <>
     <Typography paragraph>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -26,9 +32,12 @@ export const AllDiscipline = (props) => {
       classes={{paper: classes.drawerPaper,}}>
       <div className={classes.drawerContainer}>
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon/> : <MailIcon/>}</ListItemIcon>
+          {['Задачи'].map((text, index) => (
+            <ListItem
+              button key={text}
+              selected={selectedIndex === index}
+              onClick={(event) => handleListItemClick(event, index)}
+            >
               <ListItemText primary={text}/>
             </ListItem>
           ))}

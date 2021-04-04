@@ -1,7 +1,7 @@
 import {useStyles} from '../../styles'
 import {useEffect, useState} from "react";
 
-export const Forum = (props) => {
+export const DisciplineRanking = (props) => {
 	const classes = useStyles();
 	const [tasks, setTasks] = useState([]);
 
@@ -10,6 +10,6 @@ export const Forum = (props) => {
 	}, []);
 
 	return <div>
-		Здесь будет форум!
+		Здесь будет Рейтинг дисциплин!
 	</div>
 }

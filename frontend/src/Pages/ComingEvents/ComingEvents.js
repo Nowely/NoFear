@@ -1,7 +1,7 @@
 import {useStyles} from '../../styles'
 import {useEffect, useState} from "react";
 
-export const Rating = (props) => {
+export const ComingEvents = (props) => {
 	const classes = useStyles();
 	const [tasks, setTasks] = useState([]);
 
@@ -10,6 +10,6 @@ export const Rating = (props) => {
 	}, []);
 
 	return <div>
-		Здесь будут ретинговые таблицы.
+		Здесь будут Ближайшие мероприятия!
 	</div>
 }

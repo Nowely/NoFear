@@ -4,10 +4,14 @@ import Paper from '@material-ui/core/Paper';
 import {Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography} from "@material-ui/core";
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
-import {AllDiscipline} from "./AllDiscipline";
+import {DisciplineCompetencyModel} from "./DisciplineCompetencyModel";
+import {DisciplineOperationalModel} from "./DisciplineOperationalModel";
+import {ModelingClasses} from "./ModelingClasses";
+import {Statistics} from "./Statistics";
 
 export const TeachingArea = (props) => {
   const classes = useStyles();
+  const leftMenu = ['Компетентностная модель дисциплины', 'Оперативная модель дисциплины', 'Моделирование занятий', 'Статистика'];
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleListItemClick = (event, index) => {
@@ -17,10 +21,15 @@ export const TeachingArea = (props) => {
   const renderSwitch = () => {
     switch (selectedIndex) {
       case 0:
-        return <AllDiscipline/>;
+        return <DisciplineCompetencyModel/>;
       case 1:
+        return <DisciplineOperationalModel/>;
+      case 2:
+        return <ModelingClasses/>;
+      case 3:
+        return <Statistics/>;
       default:
-        return 'ASDASDsadasdasdasd';
+        return null;
     }
   }
 
@@ -31,7 +40,7 @@ export const TeachingArea = (props) => {
       classes={{paper: classes.drawerPaper,}}>
       <div className={classes.drawerContainer}>
         <List>
-          {['Все дисциплины', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+          {leftMenu.map((text, index) => (
             <ListItem
               button key={text}
               selected={selectedIndex === index}
