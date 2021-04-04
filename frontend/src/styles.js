@@ -5,11 +5,15 @@ export const useStyles = makeStyles((theme) => ({
 		flexGrow: 1,
 		backgroundColor: theme.palette.background.paper,
 	},
+	appBar: {
+    zIndex: theme.zIndex.drawer + 1,
+  },
 	grow: {
 		flexGrow: 1,
 	},
 	container: {
-		marginTop: 10,
+		width: '60%',
+		marginTop: 80,
 		display: 'flex',
 		flexWrap: 'wrap',
 	},
@@ -48,6 +52,18 @@ export const useStyles = makeStyles((theme) => ({
 	inputRoot: {
 		color: 'inherit',
 	},
+	drawer: {
+    width: 240,
+    flexShrink: 0,
+  },
+	//TODO сделать более корректный margin top
+  drawerPaper: {
+		marginTop: 72,
+    width: 240,
+  },
+  drawerContainer: {
+    overflow: 'auto',
+  },
 	inputInput: {
 		padding: theme.spacing(1, 1, 1, 0),
 		// vertical padding + font size from searchIcon

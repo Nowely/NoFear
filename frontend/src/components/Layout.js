@@ -32,7 +32,7 @@ export const Layout = props => {
 
 	return (
 		<div className={classes.root}>
-			<AppBar position="static">
+			<AppBar className={classes.appBar} position="fixed">
 				<Toolbar variant="dense">
 					<IconButton edge="start" color="inherit" aria-label="menu">
 						<WhatshotRoundedIcon/>
