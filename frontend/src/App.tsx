@@ -7,18 +7,35 @@ import {StudentArea} from "./Pages/StudentArea/StudentArea";
 import {StudentRanking} from "./Pages/StudentRanking/StudentRanking";
 import {DisciplineRanking} from "./Pages/DisciplineRanking/DisciplineRanking";
 import {ComingEvents} from "./Pages/ComingEvents/ComingEvents";
+import {CabinetType} from "./utils/consts";
+import TeachView from "./components/TeachView";
+import AppRouter from "./components/AppRouter";
+import {metodistroutes, teacherRoutes} from "./routes";
 
 export default function App() {
 
-  return (
-    <Layout>
-      <Route key="П. Личный Кабинет" exact path='/' component={TeachingArea}/>
-      <Route key="С. Личный кабинет" path='/Account' component={StudentArea}/>
-      <Route key="Рейтинг дисциплин" path='/StudentRanking' component={StudentRanking}/>
-      <Route key="Рейтинг учащихся" path='/DisciplineRanking' component={DisciplineRanking}/>
-      <Route key="Ближайшие мероприятия" path='/ComingEvents' component={ComingEvents}/>
-    </Layout>
-  );
+    let currentView :CabinetType = +(window.localStorage.getItem("CabinetType") ?? "0");
+
+    let routes: any[] = [];
+
+    switch (currentView) {
+        case CabinetType.Student:
+            break;
+        case CabinetType.Teacher:
+            routes = teacherRoutes;
+            break;
+        case CabinetType.Methodist:
+            routes = metodistroutes;
+            break;
+    }
+
+    return (
+        <Layout>
+            {routes.map(({key, path, Component}) =>
+                <Route key={key ?? path} path={path} component={Component} exact/>
+            )}
+        </Layout>
+    );
 }
 
 
