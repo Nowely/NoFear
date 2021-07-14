@@ -1,7 +1,7 @@
 import 'fontsource-roboto';
 import React from 'react';
 import {Route} from 'react-router';
-import {Layout} from './components/Layout';
+import Layout from './components/Layout';
 import {TeachingArea} from './Pages/TeachingArea/TeachingArea';
 import {StudentArea} from "./Pages/StudentArea/StudentArea";
 import {StudentRanking} from "./Pages/StudentRanking/StudentRanking";
@@ -12,11 +12,11 @@ export default function App() {
 
   return (
     <Layout>
-      <Route exact path='/' component={TeachingArea}/>
-      <Route exact path='/Account' component={StudentArea}/>
-      <Route exact path='/StudentRanking' component={StudentRanking}/>
-      <Route exact path='/DisciplineRanking' component={DisciplineRanking}/>
-      <Route exact path='/ComingEvents' component={ComingEvents}/>
+      <Route key="П. Личный Кабинет" exact path='/' component={TeachingArea}/>
+      <Route key="С. Личный кабинет" path='/Account' component={StudentArea}/>
+      <Route key="Рейтинг дисциплин" path='/StudentRanking' component={StudentRanking}/>
+      <Route key="Рейтинг учащихся" path='/DisciplineRanking' component={DisciplineRanking}/>
+      <Route key="Ближайшие мероприятия" path='/ComingEvents' component={ComingEvents}/>
     </Layout>
   );
 }
