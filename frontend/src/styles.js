@@ -12,11 +12,11 @@ export const useStyles = makeStyles((theme) => ({
 		flexGrow: 1,
 	},
 	container: {
-		width: '60%',
+		width: '100%',
 		marginTop: 80,
 		display: 'flex',
 		flexWrap: 'wrap',
-	},
+},
 	paper: {
 		padding: theme.spacing(1),
 		textAlign: 'center',

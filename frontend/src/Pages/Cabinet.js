@@ -24,8 +24,9 @@ const Cabinet = () => {
     const classes = useStyles();
 
     return (
-        <Container className="d-flex fle-column">
-            <Grid item xs={12}>
+        <>
+            <Grid container >
+            <Grid item xs={3} style={{ marginLeft: 420 }}>
                 <Card style={{ width: 400, height: 650, fontSize: 25, marginTop: 150, boxShadow: "none" }}>
                     <CardMedia
                         component="img"
@@ -39,7 +40,7 @@ const Cabinet = () => {
                     </CardContent>
                 </Card>
             </Grid>
-            <Grid item xs={12} style={{ marginTop: 200 }}>
+            <Grid item xs={3} style={{ marginTop: 200 }}>
                 <h1 style={{ fontSize: 50, marginLeft: 5  }}>Личный кабинет</h1><br/>
                 <div>
                     <Button
@@ -61,7 +62,6 @@ const Cabinet = () => {
                         variant="outlined"
                         size="small"
                         block
-                        className="mt-4 p-3"
                         style={{ fontSize: '16px', width: 600 }}
                         classes={{
                             label: classes.label,
@@ -102,11 +102,12 @@ const Cabinet = () => {
                     </Button>
                 </div>
             </Grid>
+            </Grid>
             <CreateSubject show={subjectVisible} onHide={() => setSubjectVisible(false)}/>
             <FindSubject show={findSubjectVisible} onHide={() => setFindSubjectVisible(false)}/>
             <CreateUser show={userVisible} onHide={() => setUserVisible(false)}/>
             <FindUser show={findUserVisible} onHide={() => setFindUserVisible(false)}/>
-        </Container>
+        </>
     );
 };
 
