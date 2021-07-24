@@ -10,7 +10,7 @@ import {ComingEvents} from "./Pages/ComingEvents/ComingEvents";
 import {CabinetType} from "./utils/consts";
 import TeachView from "./components/TeachView";
 import AppRouter from "./components/AppRouter";
-import {metodistroutes, teacherRoutes} from "./routes";
+import {metodistroutes, studentRoutes, teacherRoutes} from "./routes";
 
 export default function App() {
 
@@ -20,6 +20,7 @@ export default function App() {
 
     switch (currentView) {
         case CabinetType.Student:
+            routes = studentRoutes;
             break;
         case CabinetType.Teacher:
             routes = teacherRoutes;

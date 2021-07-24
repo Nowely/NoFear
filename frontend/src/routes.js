@@ -8,6 +8,10 @@ import {StudentArea} from "./Pages/StudentArea/StudentArea";
 import {StudentRanking} from "./Pages/StudentRanking/StudentRanking";
 import {DisciplineRanking} from "./Pages/DisciplineRanking/DisciplineRanking";
 import {ComingEvents} from "./Pages/ComingEvents/ComingEvents";
+import LK from "./Pages/LK";
+import GroupTable from "./Pages/GroupTable";
+import PersonalTable from "./Pages/PersonalTable";
+import Forum from "./Pages/Forum";
 
 export const metodistroutes = [
     {
@@ -57,5 +61,23 @@ export const teacherRoutes = [
         key: "Ближайшие мероприятия",
         path: '/ComingEvents',
         Component: ComingEvents
+    }
+]
+
+export const studentRoutes = [
+    {
+        key: "Личный кабинет",
+        path: '/StudentAcc',
+        Component: LK
+    },
+    {
+        key: "Рейтинговая таблица",
+        path: '/Rankings',
+        Component: GroupTable
+    },
+    {
+        key: "Форум",
+        path: '/Forum',
+        Component: Forum
     }
 ]

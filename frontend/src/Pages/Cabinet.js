@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Button, Container} from "@material-ui/core";
+import {Button} from "@material-ui/core";
 import {Grid} from "@material-ui/core";
 import CreateSubject from "../components/modals/CreateSubject";
 import CreateUser from "../components/modals/CreateUser";
@@ -41,7 +41,7 @@ const Cabinet = () => {
                 </Card>
             </Grid>
             <Grid item xs={3} style={{ marginTop: 200 }}>
-                <h1 style={{ fontSize: 50, marginLeft: 5  }}>Личный кабинет</h1><br/>
+                <h1 style={{ fontSize: 50 }}>Личный кабинет</h1><br/>
                 <div>
                     <Button
                         variant="outlined"

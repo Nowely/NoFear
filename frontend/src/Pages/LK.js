@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import './LK.css';
+import '../LK.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -24,8 +24,8 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import Icon from '@material-ui/core/Icon';
 import PersonIcon from '@material-ui/icons/Person';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
-import Kaneki from './Kaneki.png';
-import Modules from './Modules';
+import Kaneki from '../Kaneki.png';
+import Modules from '../Modules';
 
 const useStyles = makeStyles((theme) => ({
 
