@@ -11,3 +11,29 @@ ReactDOM.render(
     <App />
   </BrowserRouter>,
   rootElement);
+
+
+
+// Код Дениса
+
+// import React from 'react';
+// import ReactDOM from 'react-dom';
+// import './index.css';
+// import App from './App';
+// import reportWebVitals from './reportWebVitals';
+// import {BrowserRouter} from 'react-router-dom';
+// // import { $, jQuery } from 'JQue';
+// // window.$ = $;
+// // window.jQuery = jQuery;
+//
+// ReactDOM.render(
+//     <React.StrictMode>
+//         <BrowserRouter>
+//             <App />
+//         </BrowserRouter>
+//     </React.StrictMode>,
+//     document.getElementById('root')
+// );
+//
+// reportWebVitals();
+

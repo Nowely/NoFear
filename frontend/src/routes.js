@@ -1,5 +1,5 @@
 import Cabinet from "./Pages/Cabinet";
-import {METHODIST_ROUTE, SUBJECT_ROUTE, USER_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE} from "./utils/consts";
+import {METHODIST_ROUTE, SUBJECT_ROUTE, USER_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, LEKCII_ROUTE} from "./utils/consts";
 import SubjectPage from "./Pages/SubjectPage";
 import UserPage from "./Pages/UserPage";
 import Auth from "./Pages/Auth";
@@ -12,6 +12,7 @@ import LK from "./Pages/LK";
 import GroupTable from "./Pages/GroupTable";
 import PersonalTable from "./Pages/PersonalTable";
 import Forum from "./Pages/Forum";
+import Lecture_2 from "./Pages/Lections/Lecture_2";
 
 export const metodistroutes = [
     {
@@ -80,4 +81,9 @@ export const studentRoutes = [
         path: '/Forum',
         Component: Forum
     }
+    // {
+    //     key: "Лекции",
+    //     path: LEKCII_ROUTE + '/0',
+    //     Component: Lecture_2
+    // },
 ]
