@@ -68,7 +68,7 @@ export const teacherRoutes = [
 export const studentRoutes = [
     {
         key: "Личный кабинет",
-        path: '/StudentAcc',
+        path: '/',
         Component: LK
     },
     {
