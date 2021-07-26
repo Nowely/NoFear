@@ -23,9 +23,12 @@ import {Route, BrowserRouter as Router} from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 import Icon from '@material-ui/core/Icon';
 import PersonIcon from '@material-ui/icons/Person';
+import ListIcon from '@material-ui/icons/List';
+import GroupIcon from '@material-ui/icons/Group';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import Kaneki from '../Kaneki.png';
 import Modules from '../Modules';
+import Page from './Lections/Page.js'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -184,22 +187,47 @@ export default function LK() {
         <>
         <Grid container direction="row" justify="space-around" alignItems="flex-start">
             <Paper className={classes.root} elevation={3}>
-                <Grid container  direction="column" justify="flex-start" className="net">
+                <Grid container  direction="column" justify="space-between" className="net">
                     <div>
                         <Avatar alt='src' src={Kaneki} className={classes.avatar} />
                     </div>
                     <div>
                         <PersonIcon />
-                        name: qwerty (Иван Иванов Иванович)
+                        Name: qwerty (Иван Иванов Иванович)
                     </div>
                     <div>
-                        <Icon>list</Icon>
-                        position: 23
+                        <ListIcon />
+                        Position: 23
                     </div>
                     <div>
-                        <Icon>group</Icon>
-                        group: БПМ-19-1
+                        <GroupIcon />
+                        Group: БПМ-19-1
                     </div>
+
+                    {/*<Grid container  direction="row" justify="space-around">*/}
+                        <div className="heh">
+                            <List className={classes.list} subheader={<li />}>
+                                <ListSubheader>{'Дисциплины'}
+                                    <ListItem component={Link} to="/Modules">
+                                        <ListItemText primary="БД" />
+                                    </ListItem>
+                                    <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
+                                        <ListItemText primary="Матан" />
+                                    </ListItem>
+                                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+                                        <ListItemText primary="Нейронки" />
+                                    </ListItem>
+                                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+                                        <ListItemText primary="Вычислительная математика" />
+                                    </ListItem>
+                                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
+                                        <ListItemText primary="Сети" />
+                                    </ListItem>
+                                </ListSubheader>
+                            </List>
+                        </div>
+                    {/*</Grid>*/}
+
                 </Grid>
             </Paper>
 
@@ -324,31 +352,31 @@ export default function LK() {
                     {/* </div> */}
                 </Grid>    
             </Paper>       
-            <Paper className={classes.underthing} elevation={3}>    
-                <Grid container  direction="row" justify="space-around">
-                    <div /*className={classes.list}*/>
-                        <List className={classes.list} subheader={<li />}>
-                            <ListSubheader>{'Дисциплины'}
-                                <ListItem component={Link} to="/Modules">
-                                    <ListItemText primary="БД" /> 
-                                </ListItem>
-                                <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
-                                    <ListItemText primary="Матан" />
-                                </ListItem>
-                                <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                                    <ListItemText primary="Нейронки" />
-                                </ListItem>
-                                <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                                    <ListItemText primary="Вычислительная математика" />
-                                </ListItem>
-                                <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                                    <ListItemText primary="Сети" />
-                                </ListItem>
-                            </ListSubheader>
-                        </List>
-                    </div>
-                </Grid>
-            </Paper>   
+            {/*<Paper className={classes.underthing} elevation={3}>    */}
+            {/*    <Grid container  direction="row" justify="space-around">*/}
+            {/*        <div>*/}
+            {/*            <List className={classes.list} subheader={<li />}>*/}
+            {/*                <ListSubheader>{'Дисциплины'}*/}
+            {/*                    <ListItem component={Link} to="/Modules">*/}
+            {/*                        <ListItemText primary="БД" /> */}
+            {/*                    </ListItem>*/}
+            {/*                    <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>*/}
+            {/*                        <ListItemText primary="Матан" />*/}
+            {/*                    </ListItem>*/}
+            {/*                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>*/}
+            {/*                        <ListItemText primary="Нейронки" />*/}
+            {/*                    </ListItem>*/}
+            {/*                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>*/}
+            {/*                        <ListItemText primary="Вычислительная математика" />*/}
+            {/*                    </ListItem>*/}
+            {/*                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>*/}
+            {/*                        <ListItemText primary="Сети" />*/}
+            {/*                    </ListItem>*/}
+            {/*                </ListSubheader>*/}
+            {/*            </List>*/}
+            {/*        </div>*/}
+            {/*    </Grid>*/}
+            {/*</Paper>   */}
         </Grid>
         <Router>
             <Route path="/Modules">
