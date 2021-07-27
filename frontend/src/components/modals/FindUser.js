@@ -3,6 +3,7 @@ import {Modal} from "@material-ui/core"
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import UserList from "./UserList";
 
 const FindUser = ({show, onHide}) => {
     const useStyles = makeStyles((theme) => ({
@@ -54,9 +55,11 @@ const FindUser = ({show, onHide}) => {
                             }}
                             variant="outlined"
                         />
-                        <Button classes={{ label: classes.label }} style={{ marginLeft: 220 }} variant='contained' onClick={onHide}>Закрыть</Button>
-                        <Button classes={{ label: classes.label }} style={{ marginLeft: 10 }} variant="contained" color="primary" onClick={onHide}>Добавить</Button>
+                        <UserList/>
                     </div>
+                    <br></br>
+                    <Button classes={{ label: classes.label }} style={{ marginLeft: 1620 }} variant='contained' onClick={onHide}>Закрыть</Button>
+                    <Button classes={{ label: classes.label }} style={{ marginLeft: 10 }} variant="contained" color="primary" onClick={onHide}>Найти</Button>
                 </div>
             }
         </Modal>

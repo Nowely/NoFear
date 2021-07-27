@@ -36,7 +36,7 @@ const Todo = (props) => {
    const showPopup = () => {
      let currentTime = Date.now()
      let spentTime = Math.round((currentTime - enterTime) / 1000)
-     console.log(`Среднее время в день: `,spentTime)
+     //console.log(`Среднее время в день: `,spentTime)
      }
    const timer = setInterval(showPopup, 10000)
 

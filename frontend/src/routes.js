@@ -16,22 +16,22 @@ import Lecture_2 from "./Pages/Lections/Lecture_2";
 
 export const metodistroutes = [
     {
+        key: "М. Личный Кабинет",
         path: METHODIST_ROUTE,
         Component: Cabinet
     },
     {
+        key: "Дисциплины",
         path: SUBJECT_ROUTE + '/:idSub',
         Component: SubjectPage
     },
     {
-        path: USER_ROUTE + '/:idUsr',
-        Component: UserPage
-    },
-    {
+        key: "Авторизация",
         path: LOGIN_ROUTE,
         Component: Auth
     },
     {
+        key: "Регистрация",
         path: REGISTRATION_ROUTE,
         Component: Auth
     }
