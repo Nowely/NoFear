@@ -14,7 +14,6 @@ import PersonalTable from "./Pages/PersonalTable";
 import Forum from "./Pages/Forum";
 import Lecture_2 from "./Pages/Lections/Lecture_2";
 import Modules from "./Pages/Modules";
-import Page from "./Pages/Lections/Page";
 
 export const metodistroutes = [
     {
@@ -39,18 +38,18 @@ export const teacherRoutes = [
         path: '/',
         Component: TeachingArea
     },
-    // {
-    //     key: "С. Личный кабинет",
-    //     path: '/Account',
-    //     Component: StudentArea
-    // },
     {
-        key: "Рейтинг учащихся",
+        key: "С. Личный кабинет",
+        path: '/Account',
+        Component: StudentArea
+    },
+    {
+        key: "Рейтинг дисциплин",
         path: '/StudentRanking',
         Component: StudentRanking
     },
     {
-        key: "Рейтинг дисциплин",
+        key: "Рейтинг учащихся",
         path: '/DisciplineRanking',
         Component: DisciplineRanking
     },
@@ -78,14 +77,19 @@ export const studentRoutes = [
         Component: StudentArea
     },
     {
-        key: "Рейтинг учеников",
+        key: "Рейтинговая таблица",
         path: '/Rankings',
         Component: StudentRanking
     },
     {
-        key: "Рейтинг дисциплин",
-        path: '/DisciplineRanking',
-        Component: DisciplineRanking
+        key: "Форум",
+        path: '/Forum',
+        Component: Forum
+    },
+    {
+        key: "",
+        path: '/Modules',
+        Component: Modules
     },
     {
         key: "",
@@ -96,18 +100,6 @@ export const studentRoutes = [
         key: "",
         path: REGISTRATION_ROUTE,
         Component: Auth
-    },
-    {
-        key: "",
-        path: '/Modules',
-        Component: Modules
-    },
+    }
 
-    //
-    // {
-    //     key: "Лекции",
-    //     path: '/Lecture',
-    //     //path: LEKCII_ROUTE + '/0',
-    //     Component: Lecture_2
-    // },
 ]

@@ -52,6 +52,6 @@ export const TeachingArea = (props) => {
         </List>
       </div>
     </Drawer>
-    {renderSwitch()}
+    <div style={{width: '65%', marginLeft: '3%'}}>{renderSwitch()}</div>
   </>
 }
