@@ -1,6 +1,3 @@
-export const METHODIST_ROUTE = '/'
-export const SUBJECT_ROUTE = '/subject'
-export const USER_ROUTE = '/usr'
 export const LOGIN_ROUTE = '/log'
 export const REGISTRATION_ROUTE = '/reg'
 

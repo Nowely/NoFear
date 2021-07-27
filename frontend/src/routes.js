@@ -1,5 +1,5 @@
 import Cabinet from "./Pages/Cabinet";
-import {METHODIST_ROUTE, SUBJECT_ROUTE, USER_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, LEKCII_ROUTE} from "./utils/consts";
+import {LOGIN_ROUTE, REGISTRATION_ROUTE, LEKCII_ROUTE} from "./utils/consts";
 import SubjectPage from "./Pages/SubjectPage";
 import UserPage from "./Pages/UserPage";
 import Auth from "./Pages/Auth";
@@ -18,7 +18,7 @@ import Modules from "./Pages/Modules";
 export const metodistroutes = [
     {
         key: "Личный кабинет",
-        path: METHODIST_ROUTE,
+        path: '/Methodist',
         Component: Cabinet
     },
     {
