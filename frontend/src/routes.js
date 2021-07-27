@@ -18,7 +18,7 @@ import Modules from "./Pages/Modules";
 export const metodistroutes = [
     {
         key: "Личный кабинет",
-        path: '/Methodist',
+        path: '/',
         Component: Cabinet
     },
     {
