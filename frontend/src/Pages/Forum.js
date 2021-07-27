@@ -63,42 +63,43 @@ export default function Forum() {
 
     return (
         <>
-        <div className="dadaya">
-            <div className={classes.search}>
-                <div className={classes.searchIcon}>
-                    <SearchIcon />
-                </div>
-                <div style={{ width: 300 }}>
-                    <InputBase
-                        placeholder="Search…"
-                        classes={{
-                            root: classes.inputRoot,
-                            input: classes.inputInput,
-                        }}
-                        inputProps={{ 'aria-label': 'search' }}
-                        />
-                </div>
-            </div>
-        </div>
+            Тут будет форум
+        {/*<div className="dadaya">*/}
+        {/*    <div className={classes.search}>*/}
+        {/*        <div className={classes.searchIcon}>*/}
+        {/*            <SearchIcon />*/}
+        {/*        </div>*/}
+        {/*        <div style={{ width: 300 }}>*/}
+        {/*            <InputBase*/}
+        {/*                placeholder="Search…"*/}
+        {/*                classes={{*/}
+        {/*                    root: classes.inputRoot,*/}
+        {/*                    input: classes.inputInput,*/}
+        {/*                }}*/}
+        {/*                inputProps={{ 'aria-label': 'search' }}*/}
+        {/*                />*/}
+        {/*        </div>*/}
+        {/*    </div>*/}
+        {/*</div>*/}
 
-        <div className={classes.root}>
-            <ButtonGroup
-                orientation="vertical"
-                color="primary"
-                aria-label="vertical outlined primary button group"
-            >
-                <Button>My threads</Button>
-                <Button>Group threads</Button>
-                <Button>Marked</Button>
-            </ButtonGroup>
-        </div>
-        <Grid container  direction="column" justify="space-around" alignItems="flex-start">
-            <Paper className={classes.massage2} elevation="3">
-                Привет всем, нужна помощь. У меня не получается то то и то то
-                <TextField id="standard-basic"/>
-                <Button>Send</Button>
-            </Paper>
-        </Grid>
+        {/*<div className={classes.root}>*/}
+        {/*    <ButtonGroup*/}
+        {/*        orientation="vertical"*/}
+        {/*        color="primary"*/}
+        {/*        aria-label="vertical outlined primary button group"*/}
+        {/*    >*/}
+        {/*        <Button>My threads</Button>*/}
+        {/*        <Button>Group threads</Button>*/}
+        {/*        <Button>Marked</Button>*/}
+        {/*    </ButtonGroup>*/}
+        {/*</div>*/}
+        {/*<Grid container  direction="column" justify="space-around" alignItems="flex-start">*/}
+        {/*    <Paper className={classes.massage2} elevation="3">*/}
+        {/*        Привет всем, нужна помощь. У меня не получается то то и то то*/}
+        {/*        <TextField id="standard-basic"/>*/}
+        {/*        <Button>Send</Button>*/}
+        {/*    </Paper>*/}
+        {/*</Grid>*/}
         </>
     ) 
 }
