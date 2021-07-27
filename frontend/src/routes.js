@@ -39,19 +39,9 @@ export const teacherRoutes = [
         Component: TeachingArea
     },
     {
-        key: "С. Личный кабинет",
-        path: '/Account',
-        Component: StudentArea
-    },
-    {
-        key: "Рейтинг дисциплин",
-        path: '/StudentRanking',
+        key: "Рейтинг учеников",
+        path: '/Rankings',
         Component: StudentRanking
-    },
-    {
-        key: "Рейтинг учащихся",
-        path: '/DisciplineRanking',
-        Component: DisciplineRanking
     },
     {
         key: "Ближайшие мероприятия",
@@ -77,14 +67,19 @@ export const studentRoutes = [
         Component: StudentArea
     },
     {
-        key: "Рейтинговая таблица",
+        key: "Рейтинг учеников",
         path: '/Rankings',
         Component: StudentRanking
     },
     {
-        key: "Форум",
+        key: "",
         path: '/Forum',
         Component: Forum
+    },
+    {
+        key: "Рейтинг дисциплин",
+        path: '/DisciplineRanking',
+        Component: DisciplineRanking
     },
     {
         key: "",
