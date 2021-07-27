@@ -5,6 +5,7 @@ import {useStyles} from '../../styles'
 import {Route, Link} from "react-router-dom";
 import {UserMenu} from "./UserMenu";
 import {CabinetView} from "./CabinetView";
+import _ from "lodash";
 
 interface LayoutProps {
 	children: ReactElement[],
@@ -19,9 +20,13 @@ export const Layout = ({children}: LayoutProps) => {
 		<Typography className={classes.title} variant="h6" noWrap children="3п"/>
 	</>
 
-	const LinkTab = useMemo(() => children.map(child =>
-			<Tab className={classes.routeTab} key={child.key} label={child.key} to={child.props.path} value={child.props.path} component={Link}/>),
+	const LinkTab = useMemo(() => children.map(child => {
+		if (!_.isEmpty(child.key))
+			return <Tab className={classes.routeTab} key={child.key} label={child.key} to={child.props.path}
+						value={child.props.path} component={Link}/>;
+		}),
 		[children]);
+
 	const RouteTabs = () =>
 		<Route path="/" render={({location}) => <Tabs value={location.pathname}> {LinkTab} </Tabs>}/>;
 
