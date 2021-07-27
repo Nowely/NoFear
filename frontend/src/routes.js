@@ -21,11 +21,6 @@ export const metodistroutes = [
         Component: Cabinet
     },
     {
-        key: "Дисциплины",
-        path: SUBJECT_ROUTE + '/:idSub',
-        Component: SubjectPage
-    },
-    {
         key: "Авторизация",
         path: LOGIN_ROUTE,
         Component: Auth
