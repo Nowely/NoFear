@@ -105,11 +105,11 @@ const {lecture} = useParams();
       <Divider />
       <List>
         {drawerMap[lecture].map((text, index) => (
-        
+
           <ListItem onClick={()=>hendler(`/${lecture}/${index}`)} button key={text}>
             <ListItemText primary={text} />
           </ListItem>
-        
+
         ))}
       </List>
       <Divider />

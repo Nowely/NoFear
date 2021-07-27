@@ -8,6 +8,13 @@ import TextField from '@material-ui/core/TextField';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import SearchIcon from '@material-ui/icons/Search';
+import List from "@material-ui/core/List";
+import Typography from "@material-ui/core/Typography";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import {Drawer} from "@material-ui/core";
+
+const rightMenu = ['Создать ветку', 'Написать учителю', 'Найти участника'];
 
 const useStyles = makeStyles((theme) => ({
     
@@ -16,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
         '& > *': {
           margin: theme.spacing(1),
         },
+    },
+
+    yes: {
+        marginTop: 52,
     },
 
     massage2: {
@@ -60,10 +71,15 @@ const useStyles = makeStyles((theme) => ({
   
 export default function Forum() {
     const classes = useStyles();
+    const [selectedIndex, setSelectedIndex] = React.useState(1);
+    const  handleListItemClick  = (event, index) => {
+        setSelectedIndex(index);
+        console.log(event.target)
+    };
 
     return (
         <>
-            Тут будет форум
+            Тут будет форум!
         {/*<div className="dadaya">*/}
         {/*    <div className={classes.search}>*/}
         {/*        <div className={classes.searchIcon}>*/}
@@ -100,6 +116,27 @@ export default function Forum() {
         {/*        <Button>Send</Button>*/}
         {/*    </Paper>*/}
         {/*</Grid>*/}
+
+            <Drawer
+                anchor="right"
+                variant="permanent"
+                className={classes.drawer}
+                classes={{paper: classes.drawerPaper,}}>
+                <div className={classes.yes}>
+                    <List>
+                        {rightMenu.map((text, index) => (
+                            <ListItem
+                                button key={text}
+                                selected={selectedIndex === index}
+                                onClick={(event) => handleListItemClick(event, index)}
+                            >
+                                <ListItemText primary={text}/>
+                            </ListItem>
+
+                        ))}
+                    </List>
+                </div>
+            </Drawer>
         </>
     ) 
 }

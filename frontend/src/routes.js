@@ -13,6 +13,8 @@ import GroupTable from "./Pages/GroupTable";
 import PersonalTable from "./Pages/PersonalTable";
 import Forum from "./Pages/Forum";
 import Lecture_2 from "./Pages/Lections/Lecture_2";
+import Modules from "./Pages/Modules";
+import Page from "./Pages/Lections/Page";
 
 export const metodistroutes = [
     {
@@ -20,18 +22,12 @@ export const metodistroutes = [
         Component: Cabinet
     },
     {
-        path: SUBJECT_ROUTE + '/:idSub',
-        Component: SubjectPage
-    },
-    {
-        path: USER_ROUTE + '/:idUsr',
-        Component: UserPage
-    },
-    {
+        key: "",
         path: LOGIN_ROUTE,
         Component: Auth
     },
     {
+        key: "",
         path: REGISTRATION_ROUTE,
         Component: Auth
     }
@@ -43,18 +39,18 @@ export const teacherRoutes = [
         path: '/',
         Component: TeachingArea
     },
+    // {
+    //     key: "С. Личный кабинет",
+    //     path: '/Account',
+    //     Component: StudentArea
+    // },
     {
-        key: "С. Личный кабинет",
-        path: '/Account',
-        Component: StudentArea
-    },
-    {
-        key: "Рейтинг дисциплин",
+        key: "Рейтинг учащихся",
         path: '/StudentRanking',
         Component: StudentRanking
     },
     {
-        key: "Рейтинг учащихся",
+        key: "Рейтинг дисциплин",
         path: '/DisciplineRanking',
         Component: DisciplineRanking
     },
@@ -62,6 +58,16 @@ export const teacherRoutes = [
         key: "Ближайшие мероприятия",
         path: '/ComingEvents',
         Component: ComingEvents
+    },
+    {
+        key: "",
+        path: LOGIN_ROUTE,
+        Component: Auth
+    },
+    {
+        key: "",
+        path: REGISTRATION_ROUTE,
+        Component: Auth
     }
 ]
 
@@ -69,21 +75,39 @@ export const studentRoutes = [
     {
         key: "Личный кабинет",
         path: '/',
-        Component: LK
+        Component: StudentArea
     },
     {
-        key: "Рейтинговая таблица",
+        key: "Рейтинг учеников",
         path: '/Rankings',
-        Component: GroupTable
+        Component: StudentRanking
     },
     {
-        key: "Форум",
-        path: '/Forum',
-        Component: Forum
-    }
+        key: "Рейтинг дисциплин",
+        path: '/DisciplineRanking',
+        Component: DisciplineRanking
+    },
+    {
+        key: "",
+        path: LOGIN_ROUTE,
+        Component: Auth
+    },
+    {
+        key: "",
+        path: REGISTRATION_ROUTE,
+        Component: Auth
+    },
+    {
+        key: "",
+        path: '/Modules',
+        Component: Modules
+    },
+
+    //
     // {
     //     key: "Лекции",
-    //     path: LEKCII_ROUTE + '/0',
+    //     path: '/Lecture',
+    //     //path: LEKCII_ROUTE + '/0',
     //     Component: Lecture_2
     // },
 ]

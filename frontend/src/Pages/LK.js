@@ -21,23 +21,32 @@ import Slider from '@material-ui/core/Slider';
 import { Link } from 'react-router-dom'
 import {Route, BrowserRouter as Router} from 'react-router-dom';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
-import Icon from '@material-ui/core/Icon';
 import PersonIcon from '@material-ui/icons/Person';
 import ListIcon from '@material-ui/icons/List';
 import GroupIcon from '@material-ui/icons/Group';
-import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 import Kaneki from '../Kaneki.png';
-import Modules from '../Modules';
-import Page from './Lections/Page.js'
+import {Drawer} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
 
     root: {
-        width: '25%',
-        height: 500,
+        width: '20%',
+        height: 220,
         marginTop: 80,
+       //paddingLeft: 1,
     },
 
+    yes: {
+        marginTop:52,
+    },
+
+    no: {
+      //paddingRight: 100,
+    },
+
+    paper: {
+      //paddingLeft: 100,
+    },
     avatar: {
         width: theme.spacing(10),
         height: theme.spacing(10),
@@ -46,7 +55,8 @@ const useStyles = makeStyles((theme) => ({
     underthing: {
         width: '25%',
         height: 200,
-        marginTop: 50,
+        marginTop: 200,
+        //paddingLeft: 800,
     },
 
     slider: {
@@ -142,7 +152,9 @@ const data = [
       </MuiDialogTitle>
     );
   });
-  
+
+  const rightMenu = ['Улучшить понимание..', 'Исправить оценку..'];
+
   const DialogContent = withStyles((theme) => ({
     root: {
       padding: theme.spacing(2),
@@ -185,8 +197,8 @@ export default function LK() {
 
     return (
         <>
-        <Grid container direction="row" justify="space-around" alignItems="flex-start">
-            <Paper className={classes.root} elevation={3}>
+        {/*<Grid container direction="row" justify="space-around" alignItems="flex-start">*/}
+            <Paper className={classes.yes} elevation={3}>
                 <Grid container  direction="column" justify="space-between" className="net">
                     <div>
                         <Avatar alt='src' src={Kaneki} className={classes.avatar} />
@@ -203,34 +215,10 @@ export default function LK() {
                         <GroupIcon />
                         Group: БПМ-19-1
                     </div>
-
-                    {/*<Grid container  direction="row" justify="space-around">*/}
-                        <div className="heh">
-                            <List className={classes.list} subheader={<li />}>
-                                <ListSubheader>{'Дисциплины'}
-                                    <ListItem component={Link} to="/Modules">
-                                        <ListItemText primary="БД" />
-                                    </ListItem>
-                                    <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>
-                                        <ListItemText primary="Матан" />
-                                    </ListItem>
-                                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                                        <ListItemText primary="Нейронки" />
-                                    </ListItem>
-                                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                                        <ListItemText primary="Вычислительная математика" />
-                                    </ListItem>
-                                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>
-                                        <ListItemText primary="Сети" />
-                                    </ListItem>
-                                </ListSubheader>
-                            </List>
-                        </div>
-                    {/*</Grid>*/}
-
                 </Grid>
             </Paper>
 
+            <div className={classes.no}>
             <LineChart
                 width={700}
                 height={500}
@@ -264,13 +252,7 @@ export default function LK() {
                 <Line type="monotone" dataKey="impoints" stroke="#82ca9d" />
                 <Line type="monotone" dataKey="normal" stroke="#FF4500" />
             </LineChart>
-
-            <Paper className={classes.root} elevation={3}>
-                <div className="net">
-                    Меньше всего баллов ты получил на 5 неделе, 
-                    там были триггеры. Почитай это triggers.com и будет тебе счастье :)
-                </div>
-            </Paper>
+            </div>
 
             <Paper className={classes.underthing} elevation={3}>    
                 <Grid container  direction="row" justify="space-around">
@@ -351,38 +333,32 @@ export default function LK() {
                         </Dialog>
                     {/* </div> */}
                 </Grid>    
-            </Paper>       
-            {/*<Paper className={classes.underthing} elevation={3}>    */}
-            {/*    <Grid container  direction="row" justify="space-around">*/}
-            {/*        <div>*/}
-            {/*            <List className={classes.list} subheader={<li />}>*/}
-            {/*                <ListSubheader>{'Дисциплины'}*/}
-            {/*                    <ListItem component={Link} to="/Modules">*/}
-            {/*                        <ListItemText primary="БД" /> */}
-            {/*                    </ListItem>*/}
-            {/*                    <ListItem button selected={selectedIndex === 2} onClick={(event) => handleListItemClick(event, 2)}>*/}
-            {/*                        <ListItemText primary="Матан" />*/}
-            {/*                    </ListItem>*/}
-            {/*                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>*/}
-            {/*                        <ListItemText primary="Нейронки" />*/}
-            {/*                    </ListItem>*/}
-            {/*                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>*/}
-            {/*                        <ListItemText primary="Вычислительная математика" />*/}
-            {/*                    </ListItem>*/}
-            {/*                    <ListItem button selected={selectedIndex === 3} onClick={(event) => handleListItemClick(event, 3)}>*/}
-            {/*                        <ListItemText primary="Сети" />*/}
-            {/*                    </ListItem>*/}
-            {/*                </ListSubheader>*/}
-            {/*            </List>*/}
-            {/*        </div>*/}
-            {/*    </Grid>*/}
-            {/*</Paper>   */}
-        </Grid>
-        <Router>
-            <Route path="/Modules">
-                <Modules />
-            </Route>
-        </Router>
+            </Paper>
+        {/*</Grid>*/}
+
+            <Drawer
+                anchor="right"
+                variant="permanent"
+                className={classes.drawer}
+                classes={{paper: classes.drawerPaper,}}>
+                <div className={classes.yes}>
+                    <List>
+                        <Typography variant="h5">
+                            Задачи
+                        </Typography>
+                        {rightMenu.map((text, index) => (
+                            <ListItem
+                                button key={text}
+                                selected={selectedIndex === index}
+                                onClick={(event) => handleListItemClick(event, index)}
+                            >
+                                <ListItemText primary={text}/>
+                            </ListItem>
+
+                        ))}
+                    </List>
+                </div>
+            </Drawer>
         </>
     ) 
 }

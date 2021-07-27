@@ -8,6 +8,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
+import {Drawer} from "@material-ui/core";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import Typography from "@material-ui/core/Typography";
+
+const rightMenu = ['Улучшить понимание..', 'Исправить оценку..'];
 
 const columns = [
   { id: 'position', label: 'Position', minWidth: 170 },
@@ -15,21 +22,20 @@ const columns = [
   { id: 'fio', label: 'FIO', minWidth: 170 },
   { id: 'group', label: 'Group', minWidth: 170 },
   { id: 'performance', label: 'Performance', minWidth: 170 },
-  { id: 'work', label: 'Work', minWidth: 170 },
 ];
 
-function createData(position, nickname, fio, group, performance, work) {
-  return { position, nickname, fio, group, performance, work};
+function createData(position, nickname, fio, group, performance) {
+  return { position, nickname, fio, group, performance};
 }
 
 const rows = [
-  createData('1', 'qwe', 'Ардаков Игорь Герасимович', 'БПМ-19-1', '10', 'Тебе стоит поработать над...')
+  createData('1', 'qwe', 'Ардаков Игорь Герасимович', 'БПМ-19-1', '10')
 ];
 
 const useStyles = makeStyles({
   root: {
     width: '100%',
-    marginTop: 100,
+    marginTop: 52,
   },
   container: {
     maxHeight: 440,
@@ -40,6 +46,11 @@ export default function PersonalTable() {
   const classes = useStyles();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(1);
+  const [selectedIndex, setSelectedIndex] = React.useState(1);
+  const  handleListItemClick  = (event, index) => {
+    setSelectedIndex(index);
+    console.log(event.target)
+  };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -51,6 +62,7 @@ export default function PersonalTable() {
   };
 
   return (
+      <>
     <Paper className={classes.root}>
       <TableContainer className={classes.container}>
         <Table stickyHeader aria-label="sticky table">
@@ -85,15 +97,32 @@ export default function PersonalTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      {/* <TablePagination
-        rowsPerPageOptions={[10, 25, 100]}
-        component="div"
-        count={rows.length}
-        rowsPerPage={rowsPerPage}
-        page={page}
-        onChangePage={handleChangePage}
-        onChangeRowsPerPage={handleChangeRowsPerPage}
-      /> */}
     </Paper>
+
+  <Drawer
+      anchor="right"
+      variant="permanent"
+      className={classes.drawer}
+      classes={{paper: classes.drawerPaper,}}>
+    <div className={classes.root}>
+      <List>
+        <Typography variant="h5">
+          Задачи
+        </Typography>
+        {rightMenu.map((text, index) => (
+            <ListItem
+                button key={text}
+                selected={selectedIndex === index}
+                onClick={(event) => handleListItemClick(event, index)}
+            >
+              <ListItemText primary={text}/>
+            </ListItem>
+
+        ))}
+      </List>
+    </div>
+  </Drawer>
+      </>
   );
+
 }
