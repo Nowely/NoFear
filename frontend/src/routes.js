@@ -13,6 +13,7 @@ import GroupTable from "./Pages/GroupTable";
 import PersonalTable from "./Pages/PersonalTable";
 import Forum from "./Pages/Forum";
 import Lecture_2 from "./Pages/Lections/Lecture_2";
+import Modules from "./Modules";
 
 export const metodistroutes = [
     {
@@ -80,6 +81,11 @@ export const studentRoutes = [
         key: "Форум",
         path: '/Forum',
         Component: Forum
+    },
+    {
+        key: "",
+        path: '/Modules',
+        Component: Modules
     }
     // {
     //     key: "Лекции",
