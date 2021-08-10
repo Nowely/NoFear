@@ -4,12 +4,13 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import React, {MouseEvent, useState} from "react";
 import { useHistory } from "react-router-dom";
+import {LOGIN_ROUTE} from "../../utils/consts";
 
 export const UserMenu = () => {
 	const [anchorEl, setAnchorEl] = useState<Element | null>(null);
 	const open = Boolean(anchorEl);
 	const history = useHistory();
-	const navigateTo = () => history.push('/log');
+	const navigateTo = () => history.push(LOGIN_ROUTE);
 
 	const handleMenu = (event: MouseEvent<HTMLButtonElement>) => {
 		setAnchorEl(event.currentTarget);

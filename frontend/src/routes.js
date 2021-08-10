@@ -34,7 +34,7 @@ export const metodistRoutes = [
 
 export const teacherRoutes = [
     {
-        key: "П. Личный Кабинет",
+        key: "Личный Кабинет",
         path: '/',
         Component: TeachingArea
     },
