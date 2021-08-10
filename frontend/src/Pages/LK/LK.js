@@ -23,7 +23,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 import PersonIcon from '@material-ui/icons/Person';
 import ListIcon from '@material-ui/icons/List';
 import GroupIcon from '@material-ui/icons/Group';
-import Kaneki from '../Kaneki.png';
+import Kaneki from './Kaneki.png';
 import {Drawer} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({

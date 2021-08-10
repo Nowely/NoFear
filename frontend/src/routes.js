@@ -8,7 +8,6 @@ import {StudentArea} from "./Pages/StudentArea/StudentArea";
 import {StudentRanking} from "./Pages/StudentRanking/StudentRanking";
 import {DisciplineRanking} from "./Pages/DisciplineRanking/DisciplineRanking";
 import {ComingEvents} from "./Pages/ComingEvents/ComingEvents";
-import LK from "./Pages/LK";
 import GroupTable from "./Pages/GroupTable";
 import PersonalTable from "./Pages/PersonalTable";
 import Forum from "./Pages/Forum";

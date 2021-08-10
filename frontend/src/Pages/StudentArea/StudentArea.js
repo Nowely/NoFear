@@ -1,7 +1,7 @@
 import {useStyles} from '../../styles'
 import {useEffect, useState} from "react";
 import {Button, Container, Drawer, List, ListItem, ListItemIcon, ListItemText, Typography} from "@material-ui/core";
-import LK from "../LK";
+import LK from "../LK/LK";
 import {DisciplineOperationalModel} from "../TeachingArea/DisciplineOperationalModel";
 import {ModelingClasses} from "../TeachingArea/ModelingClasses";
 import {Statistics} from "../TeachingArea/Statistics";
