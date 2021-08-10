@@ -10,7 +10,7 @@ import {ComingEvents} from "./Pages/ComingEvents/ComingEvents";
 import {CabinetType} from "./utils/consts";
 import TeachView from "./components/TeachView";
 import AppRouter from "./components/AppRouter";
-import {metodistroutes, studentRoutes, teacherRoutes} from "./routes";
+import {metodistRoutes, studentRoutes, teacherRoutes} from "./routes";
 import {Store} from "./Stores/Store";
 import {observer} from "mobx-react";
 
@@ -26,7 +26,7 @@ export default observer(() => {
                 setRoutes(teacherRoutes);
                 break;
             case CabinetType.Methodist:
-                setRoutes(metodistroutes);
+                setRoutes(metodistRoutes);
                 break;
         }
     }, [Store.instance.currentView]);

@@ -15,7 +15,7 @@ import Forum from "./Pages/Forum";
 import Lecture_2 from "./Pages/Lections/Lecture_2";
 import Modules from "./Pages/Modules";
 
-export const metodistroutes = [
+export const metodistRoutes = [
     {
         key: "Личный кабинет",
         path: '/',
