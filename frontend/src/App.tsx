@@ -1,5 +1,5 @@
 import 'fontsource-roboto';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Route} from 'react-router';
 import Layout from './components/Layout';
 import {TeachingArea} from './Pages/TeachingArea/TeachingArea';
@@ -11,24 +11,25 @@ import {CabinetType} from "./utils/consts";
 import TeachView from "./components/TeachView";
 import AppRouter from "./components/AppRouter";
 import {metodistroutes, studentRoutes, teacherRoutes} from "./routes";
+import {Store} from "./Stores/Store";
+import {observer} from "mobx-react";
 
-export default function App() {
+export default observer(() => {
+    const [routes, setRoutes] = useState<any[]>([]);
 
-    let currentView :CabinetType = +(window.localStorage.getItem("CabinetType") ?? "0");
-
-    let routes: any[] = [];
-
-    switch (currentView) {
-        case CabinetType.Student:
-            routes = studentRoutes;
-            break;
-        case CabinetType.Teacher:
-            routes = teacherRoutes;
-            break;
-        case CabinetType.Methodist:
-            routes = metodistroutes;
-            break;
-    }
+    useEffect(() => {
+        switch (Store.instance.currentView) {
+            case CabinetType.Student:
+                setRoutes(studentRoutes);
+                break;
+            case CabinetType.Teacher:
+                setRoutes(teacherRoutes);
+                break;
+            case CabinetType.Methodist:
+                setRoutes(metodistroutes);
+                break;
+        }
+    }, [Store.instance.currentView]);
 
     return (
         <Layout>
@@ -37,7 +38,7 @@ export default function App() {
             )}
         </Layout>
     );
-}
+})
 
 
 // Код Льва App.js

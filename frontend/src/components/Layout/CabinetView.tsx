@@ -4,6 +4,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import React, {MouseEvent, useState} from "react";
 import {CabinetType} from "../../utils/consts";
+import {Store} from "../../Stores/Store";
 
 export const CabinetView = () => {
 	const [anchorEl, setAnchorEl] = useState<Element | null>(null);
@@ -14,6 +15,7 @@ export const CabinetView = () => {
 
 	};
 	const handleClose = (type: CabinetType) => {
+		Store.instance.currentView = type;
 		window.localStorage.setItem("CabinetType", type.toString());
 		setAnchorEl(null);
 	};
