@@ -33,6 +33,7 @@ export const Layout = ({children}: LayoutProps) => {
 	//TODO more Pretty
 	//TODO route to single component
 	//TODO single styled
+	//TODO correct route for invisible pages
 	return (
 		<div className={classes.root}>
 			<AppBar className={classes.appBar} position="fixed">
