@@ -1,5 +1,4 @@
 import React from 'react'
-import '../Forum.css'
 import { makeStyles } from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button';

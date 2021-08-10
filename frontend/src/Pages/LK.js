@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import '../LK.css';
 import { makeStyles } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -199,7 +198,7 @@ export default function LK() {
         <>
         {/*<Grid container direction="row" justify="space-around" alignItems="flex-start">*/}
             <Paper className={classes.yes} elevation={3}>
-                <Grid container  direction="column" justify="space-between" className="net">
+                <Grid container  direction="column" justify="space-between" style={{paddingTop: '7%', paddingLeft: '10%'}}>
                     <div>
                         <Avatar alt='src' src={Kaneki} className={classes.avatar} />
                     </div>

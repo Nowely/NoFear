@@ -1,5 +1,4 @@
 import React from 'react'
-import '../Modules.css'
 import MenuList from '@material-ui/core/MenuList';
 import MenuItem from '@material-ui/core/MenuItem';
 import Paper from '@material-ui/core/Paper';
@@ -21,7 +20,7 @@ export default function Modules() {
   const classes = useStyles();
 
   return (
-    <div className='ofc'>
+    <div style={{marginLeft: '18%', marginTop: '10%'}}>
       <Paper className={classes.root}>
         <Typography variant="inherit" variant="h4">Лекции</Typography>
         <MenuList>
