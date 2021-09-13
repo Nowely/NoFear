@@ -1,8 +1,14 @@
 {
-  "name": "cerulean",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:5001",
+  "proxy": "http://localhost:8000",
+  "scripts": {
+    "start": "rimraf ./build && react-scripts start",
+    "build": "react-scripts build",
+    "test": "cross-env CI=true react-scripts test --env=jsdom",
+    "lint": "eslint ./src/"
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
@@ -42,12 +48,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "scripts": {
-    "start": "rimraf ./build && react-scripts start",
-    "build": "react-scripts build",
-    "test": "cross-env CI=true react-scripts test --env=jsdom",
-    "lint": "eslint ./src/"
   },
   "browserslist": {
     "production": [

@@ -2,11 +2,19 @@ import {Drawer, List, ListItem, ListItemIcon, ListItemText, Typography} from "@m
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import {useStyles} from "../../styles";
-import {useState} from "react";
+import {useEffect, useState} from "react";
+import {User} from "../../Queries";
 
 export const DisciplineCompetencyModel = (props) => {
   const classes = useStyles();
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    User.get((response) => {
+      setUsers(response.data);
+    });
+  }, []);
 
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
@@ -20,6 +28,13 @@ export const DisciplineCompetencyModel = (props) => {
       Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions
       of Lorem Ipsum.
     </Typography>
+
+    <List>
+      {users.map(value =>
+        <ListItem key={value.id}>
+          <ListItemText primary={value.username}/>
+        </ListItem>)}
+    </List>
 
     <Drawer
       anchor="right"
