@@ -22,7 +22,7 @@ BUILD_DIR = CLIENT_DIR / 'build'
 if not Path.exists(BUILD_DIR):
     print('\n' + '\033[93m' + "No build client project found. Trying to build it.")
     print("Output of trying:" + '\033[0m' + '\n')
-    build_output = subprocess.check_output(f'cd {CLIENT_DIR} && npm run build', shell=True, universal_newlines=True)
+    build_output = subprocess.check_output(f'cd {CLIENT_DIR} && npm install && npm run build', shell=True, universal_newlines=True)
     print(build_output)
     print('\033[92m' + "Client build successful" + '\033[0m' + '\n')
 
