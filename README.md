@@ -1,5 +1,6 @@
 # NoFear
 
+Учебный проект первой степени. Сайт проекта: http://oknalet.ru/
 
 ## Prerequisites
 
