@@ -1,11 +1,8 @@
 # NoFear
 
-***
-
 
 ## Prerequisites
 
-***
 
 * [Install Python 3](https://www.python.org/downloads/)
 
@@ -13,7 +10,6 @@
 
 ## Start application
 
-***
 
 ### Запуск сервера:
 
